@@ -1,0 +1,5 @@
+package com.inspiron.mongocrudsachin.exception.handler;
+
+public class StudentControllerAdvice {
+
+}

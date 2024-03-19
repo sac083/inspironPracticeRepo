@@ -1,0 +1,5 @@
+package com.inspiron.mongocrudsachin.dto;
+
+public class StudeentDto {
+
+}

@@ -1,0 +1,5 @@
+package com.inspiron.mongocrudsachin.repository;
+
+public interface StudentRepository {
+
+}

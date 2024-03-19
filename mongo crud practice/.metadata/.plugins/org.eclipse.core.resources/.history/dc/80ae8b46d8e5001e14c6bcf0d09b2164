@@ -1,0 +1,12 @@
+package com.inspiron.mongocrudsachin.service;
+
+import org.springframework.stereotype.Service;
+
+import com.inspiron.mongocrudsachin.dto.StudentDto;
+
+@Service
+public interface StudentService {
+
+	public String saveStudent(StudentDto studentDto);
+
+}

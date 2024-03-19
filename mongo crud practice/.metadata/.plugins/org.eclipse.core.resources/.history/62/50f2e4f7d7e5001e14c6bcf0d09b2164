@@ -1,0 +1,19 @@
+package com.inspiron.mongocrudsachin.service;
+
+import com.inspiron.mongocrudsachin.dto.StudentDto;
+import com.inspiron.mongocrudsachin.repository.StudentRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class StudentServiceImpl implements StudentService{
+	
+	private final StudentRepository studentRepository;
+
+	@Override
+	public String saveStudent(StudentDto studentDto) {
+		
+		return null;
+	}
+
+}

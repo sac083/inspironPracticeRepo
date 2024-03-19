@@ -1,0 +1,40 @@
+package com.inspiron.mongocrudsachin.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
+
+import com.inspiron.mongocrudsachin.dto.StudentDto;
+import com.inspiron.mongocrudsachin.dto.StudentUpdateDto;
+import com.inspiron.mongocrudsachin.entity.Student;
+import com.inspiron.mongocrudsachin.exception.StudentAlreadyExistsEception;
+import com.inspiron.mongocrudsachin.repository.StudentRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Service
+public class StudentServiceImpl implements StudentService{
+	
+	private final StudentRepository studentRepository;
+
+	@Override
+	public Student saveStudent(StudentDto studentDto) {
+		Optional<Student> studentOptional = studentRepository.findByStudentNameAndStudentAge(studentDto.getStudentName(), studentDto.getStudentAge());
+		if(studentOptional.isPresent()) {
+			throw new StudentAlreadyExistsEception("Student already exists");
+		}
+		else {
+			Student student = new Student();
+			BeanUtils.copyProperties(studentDto, student);
+			return studentRepository.save(student);
+		}
+	}
+
+	@Override
+	public Student updateStudent(StudentUpdateDto studentUpdateDto,String studentId) {
+		studentRepository.findByStudentId(studentId)
+	}
+
+}

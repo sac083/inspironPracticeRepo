@@ -1,0 +1,5 @@
+package com.inspiron.mongocrudsachin.service;
+
+public class StudentServiceImpl {
+
+}
